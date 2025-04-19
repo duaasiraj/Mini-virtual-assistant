@@ -74,7 +74,7 @@ def run_assistant():
     elif "open" in command:
         open_app(command)
     elif "your name" in command:
-        speak("I’m a voice assistant made in two minutes.")
+        speak("I’m your voice assistant.Teehee.")
 
     elif command.strip() == "":
         speak("I couldn't catch that. Try again.")
