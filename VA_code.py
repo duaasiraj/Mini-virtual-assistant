@@ -7,8 +7,9 @@ import webbrowser
 import pyjokes
 import os
 
-
+#initialise the engine to convert text to audio
 engine = pyttsx3.init()
+#function to call os to open programs on command :D
 def open_app(app_name):
     if "clock" in app_name:
         os.system("start ms-clock:")  
@@ -18,21 +19,21 @@ def open_app(app_name):
         os.system("start calc")
     else:
         speak("Sorry, I don't know that app.")
-
+#function to convert text to speech
 def speak(text):
     engine.say(text)
     engine.runAndWait()
-
+#change voice to female assistant
 def set_voice():
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[1].id)
 
 # Record using sounddevice
 def record_audio(duration=3, fs=44100):
-    print("🎙️ Listening...")
+    print("Listening...")
     audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
     sd.wait()
-    print("✅ Done Listening.")
+    print("Done Listening.")
     return np.squeeze(audio)
 
 # Convert recorded audio to text
@@ -79,8 +80,8 @@ def run_assistant():
         speak("I couldn't catch that. Try again.")
 
     else:
-        speak("Sorry, I don't know that one. Try asking something else!")
+        speak("Sorry, I don't know that one. Try asking something else")
 
-# Run it!
+# main
 set_voice()
 run_assistant()
