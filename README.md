@@ -1,4 +1,4 @@
-# Mini-virtual-assistant
+# Mini-virtual-voice-assistant
 
 
 This is a basic Python voice assistant that can:
